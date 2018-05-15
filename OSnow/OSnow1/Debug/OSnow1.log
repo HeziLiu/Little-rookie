@@ -1,0 +1,9 @@
+﻿  mmu.cpp
+e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(50): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: 参见“ctime”的声明
+e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(127): warning C4018: “<”: 有符号/无符号不匹配
+e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(185): warning C4018: “>”: 有符号/无符号不匹配
+e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(285): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: 参见“ctime”的声明
+  OSnow1.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\OSnow1\Debug\OSnow1.exe
+  OSnow1.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\OSnow1\Debug\OSnow1.pdb (Partial PDB)

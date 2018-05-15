@@ -1,0 +1,112 @@
+initialization successfully.
+algorithm: 1
+1	Allocate pid(1) vaddress is 1024 to 1800
+8	Allocate pid(2) vaddress is 1024 to 7359
+9	Write  from vm(2668) to vm(2796)
+10	Write  from vm(2540) to vm(2668)
+11	Write  from vm(2053) to vm(2181)
+19	Allocate pid(3) vaddress is 1024 to 8557
+20	Read  from vm(5117) to vm(4221)
+21	Read  from vm(4997) to vm(4101)
+22	Write  from vm(7020) to vm(7148)
+29	Allocate pid(4) vaddress is 1024 to 7359
+30	Read  from vm(5692) to vm(4796)
+32	Page replace: source(6144)	 victim(1024)  
+32	Read  from vm(7810) to vm(6914)
+34	Page replace: source(7168)	 victim(2048)  
+34	Write  from vm(8337) to vm(8465)
+38	Allocate pid(5) vaddress is 1024 to 4594
+39	Read  from vm(4713) to vm(3817)
+40	Write  from vm(3118) to vm(3246)
+42	Page replace: source(4096)	 victim(1024)  
+42	Read  from vm(5316) to vm(4420)
+44	Allocate pid(6) vaddress is 1024 to 2794
+45	Read  from vm(4749) to vm(3853)
+46	Write  from vm(4284) to vm(4412)
+47	Read  from vm(4409) to vm(3513)
+49	Page replace: source(6144)	 victim(1024)  
+49	Write  from vm(7203) to vm(7331)
+51	Page replace: source(1024)	 victim(2048)  
+51	Read  from vm(2949) to vm(2053)
+52	Write  from vm(4393) to vm(4521)
+54	Page replace: source(1024)	 victim(2048)  
+54	Write  from vm(2177) to vm(2305)
+54	Memory Free pid(5)
+55	Write  from vm(7045) to vm(7173)
+55	Memory Free pid(3)
+56	Write  from vm(2547) to vm(2675)
+56	Memory Free pid(1)
+63	Allocate pid(7) vaddress is 1024 to 7359
+64	Read  from vm(6005) to vm(5109)
+66	Page replace: source(5120)	 victim(1024)  
+66	Read  from vm(6645) to vm(5749)
+68	Page replace: source(1024)	 victim(2048)  
+68	Write  from vm(2712) to vm(2840)
+68	Memory Free pid(7)
+68	Memory Free pid(4)
+70	Page replace: source(1024)	 victim(3072)  
+70	Read  from vm(2102) to vm(1206)
+70	Memory Free pid(2)
+71	Read  from vm(3639) to vm(2743)
+72	Write  from vm(2237) to vm(2365)
+73	Allocate pid(8) vaddress is 1024 to 1178
+73	Memory Free pid(6)
+74	Write  from vm(2146) to vm(2274)
+75	Write  from vm(2070) to vm(2198)
+76	Read  from vm(2196) to vm(1300)
+78	Allocate pid(9) vaddress is 1024 to 2062
+79	Write  from vm(2998) to vm(3126)
+80	Write  from vm(3083) to vm(3211)
+81	Write  from vm(2506) to vm(2634)
+85	Allocate pid(10) vaddress is 1024 to 4536
+86	Write  from vm(2062) to vm(2190)
+87	Write  from vm(2103) to vm(2231)
+87	Memory Free pid(8)
+88	Read  from vm(4971) to vm(4075)
+89	Read  from vm(2799) to vm(1903)
+91	Page replace: source(4096)	 victim(2048)  
+91	Read  from vm(5474) to vm(4578)
+93	Allocate pid(11) vaddress is 1024 to 2062
+94	Read  from vm(2941) to vm(2045)
+95	Write  from vm(2593) to vm(2721)
+96	Write  from vm(2142) to vm(2270)
+98	Allocate pid(12) vaddress is 1024 to 2116
+99	Write  from vm(4203) to vm(4331)
+100	Write  from vm(4817) to vm(4945)
+100	Memory Free pid(10)
+101	Read  from vm(2240) to vm(1344)
+102	Read  from vm(3057) to vm(2161)
+103	Read  from vm(3029) to vm(2133)
+104	Write  from vm(2492) to vm(2620)
+105	Write  from vm(2972) to vm(3100)
+105	Memory Free pid(11)
+105	Memory Free pid(9)
+106	Read  from vm(2304) to vm(1408)
+107	Read  from vm(2346) to vm(1450)
+109	Allocate pid(13) vaddress is 1024 to 2116
+110	Write  from vm(2683) to vm(2811)
+111	Write  from vm(2929) to vm(3057)
+112	Write  from vm(2053) to vm(2181)
+114	Allocate pid(14) vaddress is 1024 to 2116
+115	Read  from vm(2654) to vm(1758)
+116	Write  from vm(2233) to vm(2361)
+117	Write  from vm(2207) to vm(2335)
+125	Allocate pid(15) vaddress is 1024 to 8736
+126	Read  from vm(2710) to vm(1814)
+127	Write  from vm(2764) to vm(2892)
+128	Read  from vm(3312) to vm(2416)
+129	Allocate pid(16) vaddress is 1024 to 1996
+130	Write  from vm(6491) to vm(6619)
+131	Write  from vm(5346) to vm(5474)
+132	Write  from vm(3401) to vm(3529)
+140	Allocate pid(17) vaddress is 1024 to 9206
+141	Read  from vm(2691) to vm(1795)
+142	Write  from vm(2375) to vm(2503)
+143	Write  from vm(2658) to vm(2786)
+144	Allocate pid(18) vaddress is 1024 to 1556
+145	Read  from vm(3881) to vm(2985)
+146	Read  from vm(5824) to vm(4928)
+147	Read  from vm(2530) to vm(1634)
+148	Allocate pid(19) vaddress is 1024 to 1803
+150	Page replace: source(7168)	 victim(3072)  
+150	Re
