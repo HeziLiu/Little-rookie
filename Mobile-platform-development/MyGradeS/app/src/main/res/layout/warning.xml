@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red_light"
+        android:gravity="center">
+        <TextView
+            android:text="警告"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 您将删除该学生信息，此操作不可逆，请谨慎操作！"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/sure"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="确定"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            />
+        <Button
+            android:id="@+id/not"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="取消"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

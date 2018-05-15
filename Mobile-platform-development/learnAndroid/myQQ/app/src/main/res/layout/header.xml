@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--title布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#66B3FF"
+    android:paddingRight="15dp"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/home_"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:src="@drawable/head"/>
+
+    <Button
+        android:id="@+id/news"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="70dp"
+        android:text="消息"
+        android:textColor="@android:color/white"
+        android:background="@drawable/main_button_bj"
+        />
+
+    <Button
+        android:id="@+id/phone"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:text="电话"
+        android:textColor="@android:color/white"
+        android:background="@drawable/main_button_bj" />
+
+    <ImageView
+        android:id="@+id/add_"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/add"/>
+
+
+</LinearLayout>

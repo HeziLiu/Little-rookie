@@ -1,0 +1,4 @@
+﻿  源.cpp
+e:\software\microsoft visual studio\projects\visual c++ 项目\semantic analysis\semantic analysis\源.cpp(292): warning C4018: “<”: 有符号/无符号不匹配
+  Semantic Analysis.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\Semantic Analysis\Debug\Semantic Analysis.exe
+  Semantic Analysis.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\Semantic Analysis\Debug\Semantic Analysis.pdb (Partial PDB)

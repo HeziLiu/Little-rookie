@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.he.animator.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="通过外部类包装原始数据实现效果" />
+
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/button_1"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="动画按钮" />
+
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通过ValueAnimator，监听属性，自己实现属性的改变"
+        android:maxLines="2"
+        />
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/button_2"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="动画按钮"/>
+
+
+
+
+
+
+</LinearLayout>

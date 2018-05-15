@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue_dark"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="用户注册"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/admin_register_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/input_box"
+        android:gravity="center"
+        android:hint="请填写注册码" />
+
+    <EditText
+        android:id="@+id/admin_register_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_box"
+        android:gravity="center"
+        android:hint="请输入账户" />
+
+    <EditText
+        android:id="@+id/admin_register_first_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_box"
+        android:gravity="center"
+        android:hint="请输入密码"
+        android:inputType="numberPassword" />
+
+    <EditText
+        android:id="@+id/admin_register_second_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_box"
+        android:gravity="center"
+        android:hint="请确认密码"
+        android:inputType="numberPassword" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/rider_postive"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:text="确定"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <Button
+            android:id="@+id/rider_negative"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="取消"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

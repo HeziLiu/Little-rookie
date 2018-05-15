@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ZCC="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/options_1"
+        android:title="选择菜单1"
+        ZCC:showAsAction="never"/>
+
+    <item android:id="@+id/options_2"
+        android:title="选择菜单2"
+        ZCC:showAsAction="never"/>
+
+
+</menu>

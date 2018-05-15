@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="378px"
+    android:layout_height="141px"
+    android:background="@drawable/grid_view_item_bj"
+    android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/scene_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="21px"
+            android:background="@drawable/air_cleaner" />
+
+        <TextView
+            android:id="@+id/scene_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21px"
+            android:layout_marginTop="24px"
+            android:gravity="right"
+            android:text="空气净化器"
+            android:textColor="#ffffff"
+            android:textSize="36px" />
+
+
+        <TextView
+            android:id="@+id/scene_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scene_name"
+            android:layout_marginRight="21px"
+            android:layout_marginTop="12px"
+            android:gravity="right"
+            android:text="未开启"
+            android:textColor="#cbe0f6"
+            android:textSize="27px" />
+
+</RelativeLayout>

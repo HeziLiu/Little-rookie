@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red_light"
+        android:gravity="center">
+        <TextView
+            android:text="请输入分数段范围"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/scoreav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="平均分："
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/low"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.23"
+            android:background="@drawable/input_box"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="至"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/high"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/input_box"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.40" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/slsure"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:text="确定"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/slnot"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="取消"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

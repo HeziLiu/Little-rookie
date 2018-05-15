@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ActionBar2="http://schemas.android.com/apk/res-auto">
+    <!-- 搜索, 应该作为动作按钮展示-->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/search"
+        android:actionViewClass="android.widget.SearchView"
+        android:title="action_search"
+        ActionBar2:showAsAction="ifRoom" />
+    <!-- 设置, 在溢出菜单中展示 -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/settings"
+        android:title="action_settings"
+        ActionBar2:showAsAction="never" />
+</menu>

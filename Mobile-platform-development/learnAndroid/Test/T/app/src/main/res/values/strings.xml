@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">T</string>
+    <string name="edit_message">请输入内容</string>
+    <string name="button_name">按钮</string>
+</resources>

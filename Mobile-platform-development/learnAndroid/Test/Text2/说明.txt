@@ -1,0 +1,1 @@
+两个Activity通过Intent相互交换数据，在Activity中用一个Button 选择是否接受数据，不能直接写在onCreate中否则在Activity1 中获取从Activity2发送的数据时会崩溃，原因是因为在Activity中会通过Intent再创建一个Activity1的界面 而Activity1在内存中是存在的。

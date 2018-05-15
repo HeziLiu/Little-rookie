@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--NavigationView的header布局-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#66B3FF"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/nav_user_head"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/head"/>
+
+    <TextView
+        android:id="@+id/nav_user_name"
+        android:layout_toRightOf="@id/nav_user_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zcc、"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@android:color/white"
+        android:text="十年饮冰，难凉热血"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:id="@+id/textView3" />
+
+</RelativeLayout>

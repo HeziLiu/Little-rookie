@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/smart_scene_rom_width"
+    android:layout_height="@dimen/smart_scene_rom_height"
+    android:background="@drawable/smart_item_bj">
+
+    <ImageView
+        android:id="@+id/scene_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/smart_scene_image_marginRight" />
+
+    <TextView
+        android:id="@+id/scene_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/smart_scene_name_marginRight"
+        android:layout_marginTop="@dimen/smart_scene_name_marginTop"
+        android:gravity="right"
+        android:text="休闲模式"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/smart_scene_name_size" />
+
+</RelativeLayout>

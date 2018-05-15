@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册页面</title>
+<meta name	="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+<link rel="shortcut icon" href="images/shortcut_ico.ico">
+<link rel="stylesheet" href="css/bootstrap.css" id="css">
+<link rel="stylesheet" href="css/bootstrapValidator.css"/>
+
+<script type="text/javascript" src="js/changetheme.js">//切换主题</script>
+<!-- <script type="text/javascript" src="js/prototype-1.6.0.3.js">//引入prototype框架</script> -->
+<!--该项用于登入时传参数，与表单验证冲突将登陆模块转移到主页  -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+
+</head>
+<!--初始执行方法getParam()获取上一个页面的主题-->
+<body id="_body" onLoad="getParam()">
+<!--导航栏-->
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+	<div class="container-fluid"> 
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#" style="font-family: Poly;font-size: 1.5em">{ Whisper }</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a onClick="loop('index.html')" href="javascript:;"><span class="glyphicon glyphicon-home"></span> 主页</a></li>
+			</ul>
+		 	<ul class="nav navbar-nav navbar-right">
+      			<li 、
+      			class="active"><a onClick="loop('sign_up.html')" href="javascript:;"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+    			<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">切换<b class="caret"></b></a>
+      				<ul class="dropdown-menu"><!--改变样式-->
+      					<li><a href="javascript:;" onClick="change_default();">默认主题</a></li>
+      					<li><a href="javascript:;" onClick="change_white();">白色简约</a></li>
+      				</ul>
+      			</li>
+   		 	</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- 表单元素及页尾footer-->
+<div class="col-sm-6 " style="margin-left: 25%;padding-top: 80px">
+	<div class="well" style="align-content: center">
+		<form id="signform" name="signform" class="form-horizontal" method="post" action="sign_up.jsp" style="margin-left: 15%">
+			<fieldset>
+				<legend><h3>注册信息</h3></legend>
+				<br><br>
+				<div class="form-group">
+					<label for="inputUser" class="col-sm-2 control-label">用户名</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="inputUser" name="username" placeholder="请输入用户名">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="in_password" class="col-sm-2 control-label">密码</label>
+					<div class="col-sm-6">
+						<input type="password" class="form-control" id="in_password" name="password" placeholder="请输入密码">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="to_password" class="col-sm-2 control-label">确认密码</label>
+					<div class="col-sm-6">
+						<input type="password" class="form-control" id="to_password" name="confirmPassword" placeholder="再次确认密码">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="sex" class="col-sm-2 control-label">性别</label>
+					<div class="col-sm-2">
+						<select class="form-control" id="sex" name="sex">
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+					</div>
+					<label for="grade" class="col-sm-2 control-label">年级</label>
+					<div class="col-sm-2">
+						<select class="form-control" id="grade" name="grade">
+							<option value="大一">大一</option>
+							<option value="大二">大二</option>
+							<option value="大三">大三</option>
+							<option value="大四">大四</option>
+							<option value="研究生">研究生</option>
+							<option value="博士">博士</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="interest" class="col-sm-2 control-label">专业兴趣</label>
+					<div class="col-sm-4" id="interset1">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="人工智能"><strong>人工智能</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="数据挖掘"><strong>数据挖掘</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="数学建模"><strong>数学建模</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="网络编程"><strong>网络编程</strong>
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-4" id="interset2">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="机器学习"><strong>机器学习</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="多媒体技术"><strong>多媒体技术</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="计算机图形学"><strong>计算机图形学</strong>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="chk" value="移动平台开发"><strong>移动平台开发</strong>
+							</label>
+						</div>
+					</div>
+					
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="tel" class="col-sm-2 control-label">联系电话</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入联系电话">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="textArea" class="col-sm-2 control-label">个人简介</label>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="3" id="textArea" name="comment"></textarea>
+						<span class="help-block">输入您的个人介绍等附加信息</span>
+					</div>
+				</div>
+				<br><br>
+				<div class="form-group">
+					<div class="col-sm-8 col-sm-offset-5">
+						<button type="reset" class="btn btn-default" style="margin-left: 5%">重置</button>
+						<button type="submit" class="btn btn-primary" style="margin-left: 5%">提交</button>
+						<br>
+						<p id="acc1"></p>
+					</div>
+					
+				</div>
+				
+			</fieldset>
+		</form>
+	</div>
+	<br><br>
+<!--页面footer部分-->
+	<footer style="text-align: center">
+	&copy;2017 Whisper.com 版权所有<br>
+	Email:<a href="mailto:7891444@qq.com">78891444@qq.com</a><br>
+	<span class="glyphicon glyphicon-earphone">TEL:</span>18750329229
+	</footer>
+</div>
+<!--表单验证-->
+<script type="text/javascript">
+$(document).ready(function(){
+		$('#signform').bootstrapValidator({
+			message:'This value is not valid',
+			feedbackIcons:{
+				valid:'glyphicon glyphicon-ok',
+				invalid:'glyphicon glyphicon-remove',
+				validating:'glyphicon glyphicon-refresh'
+			},
+			fields:{
+				username:{
+					validators:{
+						notEmpty:{
+							message:'用户名不能为空'
+						},
+						stringLength:{
+							min:3,
+							max:22,
+							message:'用户名长度为3-22'
+						},
+						regexp:{
+							regexp:/^[0-9A-Za-z_]+$/,
+							message:'用户名由字母，数字及_组成'
+						}, 
+				
+						different:{
+							field:'password',
+							message:'用户名和密码不能相同'
+							}
+					}
+				},
+				password:{
+					validators:{
+						notEmpty:{
+							message:'密码不能为空'
+						},
+						stringLength:{
+							min:5,
+							max:22,
+							message:'密码长度为5-22'
+						},
+						 regexp:{
+							regexp:/^[0-9A-Za-z_]+$/,
+							message:'密码由字母，数字及_组成'
+						}, 
+						identical:{
+							field:'confirmPassword',
+							message:'密码输入不一致'
+						},
+						different:{
+							field:'username',
+							message:'密码不能与用户名相同'
+						}
+					}
+				},
+				confirmPassword:{
+					validators:{
+						notEmpty:{
+							message:'确认密码不能为空'
+						},
+						identical:{
+							field:'password',
+							message:'密码输入不一致'
+						},
+						different:{
+							field:'username',
+							message:'密码不能与用户名相同'
+						}
+					}
+				},
+				'chk':{
+					validators:{
+							choice:{
+							min:2,
+							max:8,
+							message:'请至少选择2个您所感兴趣的'
+							}
+					}
+				},
+				tel:{
+					validators:{
+						notEmpty:{
+							message:'联系电话不能空'
+						},
+						regexp:{
+							regexp:/^[0-9]+$/,
+							message:'该联系电话无效'
+						},
+						stringLength:{
+							min:6,
+							max:11,
+							message:'联系电话长度为6-11'
+						}
+					}
+				}
+			}
+		});
+	});
+</script>
+</body>
+</html>

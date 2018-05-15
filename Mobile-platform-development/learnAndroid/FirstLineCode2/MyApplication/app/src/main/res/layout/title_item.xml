@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <TextView
+        android:id="@+id/title_"
+        android:layout_width="@dimen/smart_title_width"
+        android:layout_height="@dimen/smart_title_height"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="场景模式"
+        android:textColor="#cbe0f6"
+        android:textSize="@dimen/smart_title_size" />
+</FrameLayout>

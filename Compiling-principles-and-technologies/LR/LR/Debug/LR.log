@@ -1,0 +1,6 @@
+﻿  LR_Analyzer.cpp
+e:\software\microsoft visual studio\projects\visual c++ 项目\lr\lr\lr_analyzer.cpp(94): warning C4018: “<”: 有符号/无符号不匹配
+e:\software\microsoft visual studio\projects\visual c++ 项目\lr\lr\lr_analyzer.cpp(117): warning C4018: “<”: 有符号/无符号不匹配
+e:\software\microsoft visual studio\projects\visual c++ 项目\lr\lr\lr_analyzer.cpp(267): warning C4018: “<”: 有符号/无符号不匹配
+  LR.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\LR\Debug\LR.exe
+  LR.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\LR\Debug\LR.pdb (Partial PDB)

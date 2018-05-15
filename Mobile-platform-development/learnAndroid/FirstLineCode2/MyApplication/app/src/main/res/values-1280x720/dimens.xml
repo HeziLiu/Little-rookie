@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="smart_max_width">704px</dimen>
+    <dimen name="smart_max_height">470px</dimen>
+    <dimen name="smart_max_marginTop">132px</dimen>
+    <dimen name="smart_bj_margin_bottom">18px</dimen>
+    <dimen name="smart_title_marginTop">73px</dimen>
+    <dimen name="smart_scene_rom_width">252px</dimen>
+    <dimen name="smart_scene_rom_height">94px</dimen>
+    <dimen name="smart_scene_rom_marginLeft">160px</dimen>
+    <dimen name="smart_scene_rom_marginTop">110px</dimen>
+    <dimen name="smart_unify_size">8px</dimen>
+    <dimen name="smart_scene_rom_marginRight">32px</dimen>
+    <dimen name="smart_device_width">165px</dimen>
+    <dimen name="smart_device_height">146px</dimen>
+    <dimen name="smart_device_marginLeft">160px</dimen>
+    <dimen name="smart_device_marginTop">110px</dimen>
+    <dimen name="smart_more_arrow_width">35px</dimen>
+    <dimen name="smart_more_arrow_height">14px</dimen>
+    <dimen name="smart_more_arrow_marginLeft">380px</dimen>
+    <dimen name="smart_more_arrow_marginTop">12px</dimen>
+    <dimen name="smart_device_image_width">72px</dimen>
+    <dimen name="smart_device_image_height">72px</dimen>
+    <dimen name="smart_device_image_marginLeft">46px</dimen>
+    <dimen name="smart_device_image_marginRight">46px</dimen>
+    <dimen name="smart_device_image_marginTop">26px</dimen>
+    <dimen name="smart_device_name_marginTop">14px</dimen>
+    <dimen name="smart_device_name_size">20px</dimen>
+    <dimen name="smart_rom_image_marginRight">14px</dimen>
+    <dimen name="smart_rom_name_marginRight">14px</dimen>
+    <dimen name="smart_rom_name_marginTop">16px</dimen>
+    <dimen name="smart_rom_name_size">24px</dimen>
+    <dimen name="smart_rom_state_marginRight">14px</dimen>
+    <dimen name="smart_rom_state_marginTop">8px</dimen>
+    <dimen name="smart_rom_state_text_size">18px</dimen>
+    <dimen name="smart_scene_image_marginRight">14px</dimen>
+    <dimen name="smart_scene_name_marginRight">14px</dimen>
+    <dimen name="smart_scene_name_marginTop">36px</dimen>
+    <dimen name="smart_scene_name_size">24px</dimen>
+    <dimen name="smart_title_marginLeft">18px</dimen>
+    <dimen name="smart_title_width">110px</dimen>
+    <dimen name="smart_title_height">62px</dimen>
+    <dimen name="smart_title_size">20px</dimen>
+
+</resources>

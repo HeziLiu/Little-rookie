@@ -1,0 +1,5 @@
+﻿  源.cpp
+e:\software\microsoft visual studio\projects\visual c++ 项目\lexical_analyzer\lexical_analyzer\源.cpp(683): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+  lexical_analyzer.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\lexical_analyzer\Debug\lexical_analyzer.exe
+  lexical_analyzer.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Visual C++ 项目\lexical_analyzer\Debug\lexical_analyzer.pdb (Partial PDB)

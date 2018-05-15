@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue_dark"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="用户注册"
+            android:textColor="#fff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/student_register_info"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_box"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:hint="请输入注册码"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/student_register_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_box"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:gravity="center"
+            android:hint="请输入账户"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/student_register_num"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_box"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:gravity="center"
+            android:hint="请输入寝室号"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/student_register_first_password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_box"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:hint="请输入密码"
+            android:inputType="numberPassword"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/student_register_second_password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_box"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:gravity="center"
+            android:hint="请确认密码"
+            android:inputType="numberPassword"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/student_postive"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:text="确定"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <Button
+            android:id="@+id/student_negative"
+            style="@style/common_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="取消"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
