@@ -1,0 +1,14 @@
+﻿  源.cpp
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(59): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(62): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: 参见“fscanf”的声明
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(65): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: 参见“fscanf”的声明
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(71): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: 参见“fscanf”的声明
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(299): warning C4101: “q”: 未引用的局部变量
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(398): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+e:\software\microsoft visual studio\projects\geographic information management system\geographic information management system\源.cpp(422): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  Geographic Information Management System.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Geographic Information Management System\Debug\Geographic Information Management System.exe
+  Geographic Information Management System.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\Geographic Information Management System\Debug\Geographic Information Management System.pdb (Partial PDB)
