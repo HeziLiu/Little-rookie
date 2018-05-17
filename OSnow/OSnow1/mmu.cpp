@@ -242,11 +242,11 @@ Status free(string ID)
 			}
 			//与前面的空闲块相连或与后面的空闲块相连，或者与前后空闲块相连等。
 			if ((p->next->next == NULL) && (p->next->data.state == Free) && (p->data.address + p->data.size == p->next->data.address))
-			{//与后一块相连
+			{//与最后一块空闲块相连
 				p->data.size += p->next->data.size;
 				p->next = NULL;
 				if ((p->prior->data.state == Free) && (p->prior->data.address + p->prior->data.size == p->data.address))
-				{
+				{//与前一块空闲块相连
 					p->prior->data.size += p->data.size;
 					p->prior->next = NULL;
 					free(p);
@@ -261,7 +261,7 @@ Status free(string ID)
 					p->data.size += p->next->data.size;
 					p->next = p->next->next;
 					p->next->prior = p;
-				}
+				}//只与前一块相连
 				p->prior->data.size += p->data.size;
 				p->prior->next = p->next;
 				p->next->prior = p->prior;
@@ -270,7 +270,6 @@ Status free(string ID)
 			}
 			else if ((p->next->data.state == Free) && (p->data.address + p->data.size == p->next->data.address))
 			{//只与后一块相连
-
 				p->data.size += p->next->data.size;
 				p->next = p->next->next;
 				p->next->prior = p;
