@@ -70,16 +70,16 @@ Status First_fit(string ID, size_t request)
 	block->data.ID = ID;
 	block->data.size = request;
 	block->data.state = Busy;
-	while (p)
-	{
+	while (p)	//P为空闲区双链表的第一个节点
+	{			//request为申请内存大小
 		if (p->data.state == Free && p->data.size >= request)
-		{
+		{		//找到的p块大小有余
 			if ((p->data.size - request) > 1)
-			{
+			{	//找到合适块后修改其参数
 				block->data.address = p->data.address;
 				p->data.address = p->data.address + request;
 				p->data.size = p->data.size - request;
-
+				//将新生成的block块插入到p之前
 				p->prior->next = block;
 				block->next = p;
 				block->prior = p->prior;
@@ -87,7 +87,7 @@ Status First_fit(string ID, size_t request)
 				return block->data.address;//return paddr
 			}
 			else
-			{
+			{	//找到的p块大小正好
 				p->data.ID = ID;
 				p->data.state = Busy;
 				delete block;
@@ -101,8 +101,6 @@ Status First_fit(string ID, size_t request)
 }
 
 Status Best_fit(string ID, size_t request)
-
-
 {
 	memList block = new memNode;
 	memset(block, 0, sizeof(memNode));
@@ -116,16 +114,17 @@ Status Best_fit(string ID, size_t request)
 	memNode *q1 = NULL;
 
 	while (p)
-	{
+	{	//p为空闲区双链表的第一个节点
+		//q记录最佳插入位置，i为内存大小差值（此处取最小）
 		if (p->data.state == Free && p->data.size >= request)
 		{
-			if (num == 0)
+			if (num == 0)//num记录是否为第第一次记录差值
 			{
 				q = p;
 				i = q->data.size - request;
 			}
 			else if (p->data.size - request < i)
-			{
+			{//比较i值，取最小的空闲块记录其位置
 				q = p;
 				i = q->data.size - request;
 			}
@@ -133,17 +132,17 @@ Status Best_fit(string ID, size_t request)
 		}
 		p = p->next;
 	}
-	//要查找到最小剩余空间的分区，即最佳插入位置
-	if (q == NULL) return ERROR;//没有找到空闲块
+	//没有找到空闲块
+	if (q == NULL) return ERROR;
 	else
 	{
-		//找到了最佳位置并实现内存分配的代码
+			//找到了最佳位置并实现内存分配
 		if ((q->data.size - request) > 1)
-		{
+		{	//q块内存大小有余
 			block->data.address = q->data.address;
 			q->data.address = q->data.address + request;
 			q->data.size = q->data.size - request;
-
+			//将新生成的block插入到q之前
 			block->next = q;
 			block->prior = q->prior;
 			q->prior->next = block;
@@ -151,7 +150,7 @@ Status Best_fit(string ID, size_t request)
 			return block->data.address;
 		}
 		else
-		{
+		{	//q块内存大小正好可供分配
 			q->data.ID = ID;
 			q->data.state = Busy;
 			delete block;
@@ -174,7 +173,6 @@ Status Worst_fit(string ID, size_t request) {
 
 	while (p)
 	{
-
 		if (p->data.state == Free && p->data.size >= request)
 		{
 			if (num == 0)
@@ -226,7 +224,8 @@ Status free(string ID)
 	while (p)
 	{
 		if (p->data.ID == ID)
-		{
+		{	//找到需要释放的块
+			//修改其相应参数
 			result = true;
 			paddr = p->data.address;
 			p->data.state = Free;
@@ -234,14 +233,14 @@ Status free(string ID)
 			size = p->data.size;
 			if (p == block_last) {
 				if ((p->prior->data.state == Free) && (p->prior->data.address + p->prior->data.size == p->data.address))
-				{//为最后一块
+				{//为最后一块并且与倒数第二块相邻
 					p->prior->data.size += p->data.size;
 					p->prior->next = NULL;
 					free(p);
-				}
+				}//不相邻则无操作
 				break;
 			}
-			//其他情况的回收的代码，主要包括要回收的分区与前面的空闲块相连或与后面的空闲块相连，或者与前后空闲块相连等。
+			//与前面的空闲块相连或与后面的空闲块相连，或者与前后空闲块相连等。
 			if ((p->next->next == NULL) && (p->next->data.state == Free) && (p->data.address + p->data.size == p->next->data.address))
 			{//与后一块相连
 				p->data.size += p->next->data.size;

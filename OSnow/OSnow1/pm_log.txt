@@ -196,3 +196,17 @@ Mon May 14 10:44:44 2018
 Succeed: Assigned successfully!      StartAddr£º23552      EndAddr£º28672      Memory£º77824
 Mon May 14 10:44:47 2018
 Succeed: Release Completed!      StartAddr£º15360      EndAddr£º17408      Memory£º79872
+Wed May 16 23:05:34 2018
+Succeed: Assigned successfully!      StartAddr£º0      EndAddr£º3072      Memory£º99328
+Wed May 16 23:05:43 2018
+Succeed: Assigned successfully!      StartAddr£º3072      EndAddr£º7168      Memory£º95232
+Wed May 16 23:05:52 2018
+Succeed: Assigned successfully!      StartAddr£º7168      EndAddr£º12288      Memory£º90112
+Wed May 16 23:06:01 2018
+Succeed: Assigned successfully!      StartAddr£º12288      EndAddr£º17408      Memory£º84992
+Wed May 16 23:06:04 2018
+Succeed: Release Completed!      StartAddr£º0      EndAddr£º3072      Memory£º88064
+Wed May 16 23:06:10 2018
+Succeed: Assigned successfully!      StartAddr£º0      EndAddr£º3072      Memory£º84992
+Wed May 16 23:06:19 2018
+Succeed: Assigned successfully!      StartAddr£º17408      EndAddr£º19456      Memory£º82944

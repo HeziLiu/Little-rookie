@@ -1,9 +1,24 @@
-﻿  mmu.cpp
-e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(50): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  main.cpp
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.h(12): warning C4005: “ERROR”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\wingdi.h(118): note: 参见“ERROR”的前一个定义
+  正在生成代码...
+  正在编译...
+  vmm.cpp
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.h(12): warning C4005: “ERROR”: 宏重定义
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\wingdi.h(118): note: 参见“ERROR”的前一个定义
+e:\git\git_workplace\little-rookie\osnow\osnow1\vmm.cpp(198): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+e:\git\git_workplace\little-rookie\osnow\osnow1\vmm.cpp(219): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+e:\git\git_workplace\little-rookie\osnow\osnow1\vmm.cpp(721): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+  mmu.cpp
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.cpp(50): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: 参见“ctime”的声明
-e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(127): warning C4018: “<”: 有符号/无符号不匹配
-e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(185): warning C4018: “>”: 有符号/无符号不匹配
-e:\software\microsoft visual studio\projects\osnow1\osnow1\mmu.cpp(285): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.cpp(127): warning C4018: “<”: 有符号/无符号不匹配
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.cpp(185): warning C4018: “>”: 有符号/无符号不匹配
+e:\git\git_workplace\little-rookie\osnow\osnow1\mmu.cpp(285): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(475): note: 参见“ctime”的声明
-  OSnow1.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\OSnow1\Debug\OSnow1.exe
-  OSnow1.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\OSnow1\Debug\OSnow1.pdb (Partial PDB)
+  正在生成代码...
+  OSnow1.vcxproj -> E:\Git\git_workplace\Little-rookie\OSnow\Debug\OSnow1.exe
+  OSnow1.vcxproj -> E:\Git\git_workplace\Little-rookie\OSnow\Debug\OSnow1.pdb (Partial PDB)

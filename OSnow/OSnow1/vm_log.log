@@ -109,4 +109,28 @@ algorithm: 1
 147	Read  from vm(2530) to vm(1634)
 148	Allocate pid(19) vaddress is 1024 to 1803
 150	Page replace: source(7168)	 victim(3072)  
-150	Re
+150	Reinitialization successfully.
+algorithm: 1
+4	Allocate pid(1) vaddress is 1024 to 4254
+11	Allocate pid(2) vaddress is 1024 to 7359
+12	Write  from vm(4366) to vm(4494)
+13	Write  from vm(2540) to vm(2668)
+14	Write  from vm(4255) to vm(4383)
+22	Allocate pid(3) vaddress is 1024 to 8557
+23	Read  from vm(5117) to vm(4221)
+24	Read  from vm(4997) to vm(4101)
+25	Write  from vm(7020) to vm(7148)
+33	Allocate pid(4) vaddress is 1024 to 8557
+33	Memory Free pid(1)
+34	Read  from vm(2098) to vm(1202)
+35	Read  from vm(3018) to vm(2122)
+39	Allocate pid(5) vaddress is 1024 to 4594
+40	Write  from vm(7139) to vm(7267)
+41	Read  from vm(3927) to vm(3031)
+42	Write  from vm(6688) to vm(6816)
+44	Page replace: source(4096)	 victim(1024)  
+44	Read  from vm(5316) to vm(4420)
+46	Allocate pid(6) vaddress is 1024 to 2794
+47	Write  from vm(3576) to vm(3704)
+48	Read  from vm(4070) to vm(3174)
+49	Read  from vm(3924) to vm(3028)
