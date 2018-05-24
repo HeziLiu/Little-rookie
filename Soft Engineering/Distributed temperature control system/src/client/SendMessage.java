@@ -1,6 +1,6 @@
 package client;
 
-import client.model.conditioner
+import client.model.conditioner;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -29,13 +29,13 @@ public class SendMessage {
         // TODO Auto-generated constructor stub
         conditioner=new conditioner();
         room=conditioner.getRoom();
-        curTemperature=conditioner.getCurTemperature();
-        objTemperature=conditioner.getObjTemperature();
+        curTemperature=conditioner.getCurrentTemp();
+        objTemperature=conditioner.getTargetTemp();
         type=conditioner.getType();
         wind=conditioner.getWind();
         _switch=conditioner.get_switch();
         changeunit=conditioner.getChangeunit();
-        objTemperature=conditioner.getObjTemperature();
+        objTemperature=conditioner.getTargetTemp();
         if(_switch==1)
         {
             if(objTemperature>curTemperature)
@@ -56,7 +56,7 @@ public class SendMessage {
                 if(curTemperature<objTemperature)
                 {
                     curTemperature=(float) (curTemperature+wind*changeunit);
-                    conditioner.setCurTemperature(curTemperature);
+                    conditioner.setCurrentTemp(curTemperature);
                 }
             }
         };
@@ -73,7 +73,7 @@ public class SendMessage {
                 if(curTemperature>objTemperature)
                 {
                     curTemperature=(float) (curTemperature-wind*changeunit);
-                    conditioner.setCurTemperature(curTemperature);
+                    conditioner.setCurrentTemp(curTemperature);
                 }
             }
         };

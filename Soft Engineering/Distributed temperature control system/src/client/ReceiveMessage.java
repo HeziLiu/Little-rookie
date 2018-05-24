@@ -33,7 +33,7 @@ public class ReceiveMessage {
             {
                 conditioner.set_switch(_swicth);
                 conditioner.setCurrentPay(cost);
-                conditioner.setObjTemperature(objTemperature);
+                conditioner.setTargetTemp(objTemperature);
                 conditioner.setWind(wind);
             }
 
