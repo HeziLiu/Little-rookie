@@ -1,6 +1,6 @@
 # 作业四 C语言编程作业
 
-##### ``add.c``提供``add(int,int)``函数
+#####  ``add.c``提供``add(int,int)``函数
 
 ```c
 #include "add.h"
@@ -10,7 +10,7 @@ int add(int a,int b){
 }
 ```
 
-#####``add.h``提供``add``函数声明
+#####  ``add.h``提供``add``函数声明
 
 ```c
 #ifndef _ADD_H
@@ -20,13 +20,13 @@ int add(int a,int b);
 #endif
 ```
 
-##### ``add(int,int)``打包成库``libadd.a``
+#####  ``add(int,int)``打包成库``libadd.a``
 
 ```bash
 ➜  hw4 ar -crv libadd.a add.o
 ```
 
-##### ``calc.c``利用``libadd.a``中的``add``函数，完成计算``add(100,100)``并输出结果
+#####  ``calc.c``利用``libadd.a``中的``add``函数，完成计算``add(100,100)``并输出结果
 
 ```c
 #include <stdio.h>
@@ -36,7 +36,7 @@ int main(){
 }
 ```
 
-#####Makefile内容
+##### Makefile内容
 
 ```makefile
 calc:calc.c add.o libadd.a
