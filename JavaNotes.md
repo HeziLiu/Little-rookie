@@ -1,0 +1,5 @@
+# Collection和Collections的区别
+
+collection是集合类的上级接口，继承与他的接口主要有Set和List
+
+Collection是针对集合类的一个帮助类，他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作 
