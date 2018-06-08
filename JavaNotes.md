@@ -1,4 +1,4 @@
-##Collection和Collections的区别
+## Collection和Collections的区别
 
 collection是集合类的上级接口，继承与他的接口主要有Set和List
 
