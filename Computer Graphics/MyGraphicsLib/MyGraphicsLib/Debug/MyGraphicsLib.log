@@ -1,0 +1,9 @@
+﻿  MyGraphicsLib.cpp
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(30): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(35): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(36): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(50): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(110): warning C4305: “+=”: 从“double”到“float”截断
+e:\software\microsoft visual studio\projects\mygraphicslib\mygraphicslib\mygraphicslib.cpp(233): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  MyGraphicsLib.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\MyGraphicsLib\Debug\MyGraphicsLib.exe
+  MyGraphicsLib.vcxproj -> E:\Software\Microsoft Visual Studio\Projects\MyGraphicsLib\Debug\MyGraphicsLib.pdb (Partial PDB)
