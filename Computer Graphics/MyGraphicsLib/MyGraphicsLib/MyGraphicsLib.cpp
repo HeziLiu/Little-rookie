@@ -2,6 +2,7 @@
 #include <math.h>
 #include <iostream>
 #include <queue>
+#include "name.h"
 using namespace std;
 // 用于注册的窗口类名
 const char g_szClassName[] = "myWindowClass";
@@ -27,6 +28,26 @@ struct point
 	float x;
 	float y;
 }polypoint[POINTNUM] = {395, 887, 479, 998, 1199, 433, 1101, 867, 1294, 715, 1417, 171, 857, 163, 668, 314, 1111, 321};//{ 370,10,560,100,560,200,430,130,340,170,340,80 };//多边形顶点 
+
+void DemoHZ(unsigned char *buf, int x, int y, COLORREF color,HDC hdc)
+{
+	int i;
+	int j;
+	int k;
+	int nWidth = buf[0];
+	int nBytesPerRow = buf[2];
+	//开始写汉字  
+	buf += 3;
+	for (i = 0; i<nWidth; i++)
+	{
+		for (j = 0; j<nBytesPerRow; j++)
+		{
+			for (k = 0; k<8; k++)
+				if (((buf[nBytesPerRow*i + j] >> (7 - k)) & 0x1) != NULL)
+					SetPixel(hdc,x + 8 * j + k, y + i, color);
+		}
+	}
+}
 
 //直线算法一
 void DDA(float x0, float y0, float xn, float yn, HDC hdc) {
@@ -462,12 +483,14 @@ void Paint(HWND hwnd)
 	_hpen = CreatePen(PS_SOLID, 1, RED_COLOR);//阴影线填充画笔初始化
 	SelectObject(hdc, hpen);
 
-	drawPolygon(hdc, polypoint, 9, 9);
-	//ScanFill(hdc);
-	shadowLine(hdc, polypoint, 9, 9, 10, 30);
+	//drawPolygon(hdc, polypoint, 9, 9);
+	//ScanFill(hdc);	//修改
+	//shadowLine(hdc, polypoint, 9, 9, 10, 30);
 	//COLORREF this_color = RGB(255, 255, 255);//GetPixel(hdc, 180, 180);
 	//FloodFill4(hdc, 101, 200, this_color, RED_COLOR);
-
+	//DemoHZ(Bmp001, 100, 100, BLUE_COLOR, hdc);
+	DemoHZ(Bmp002, 150, 100, BLUE_COLOR, hdc);
+	//DemoHZ(Bmp003, 200, 100, BLUE_COLOR, hdc);
 	DeleteObject(hpen);
 	SelectObject(hdc, _hpen);// 选择阴影线填充画笔
 	DeleteObject(_hpen);
