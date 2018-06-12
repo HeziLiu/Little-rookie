@@ -1,3 +1,10 @@
+## Android四大组件
+
++ Activity
++ Service
++ Content Provider
++ BroadcastReceiver
+
 ## Activity的生命周期
 
 ![img](http://img.my.csdn.net/uploads/201303/08/1362732913_3457.jpg) 
@@ -34,4 +41,14 @@ Activity的``onSaveInstanceState()``和``onRestoreInstanceState()``并不是生�
 
 + standard
 + singleTop
++ like
 
+## UI
+
++ px:(pixels)像素  
+
+  $pixel=(ppi/160)*dip$
+
+  
+
+  
