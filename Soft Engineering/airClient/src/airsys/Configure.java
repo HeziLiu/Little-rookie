@@ -4,9 +4,9 @@ public interface Configure {
     int DEFAULT_PORT=9996;
     int REMOTE_PORT=9996;
 
-    String ROOM_ID="4";
+    String ROOM_ID="307B";
 
-    String REMOTE_IP="localhost";
+    String REMOTE_IP="172.20.10.10";
 
     int DEFAULT_TICK=1000;//1 sec
 

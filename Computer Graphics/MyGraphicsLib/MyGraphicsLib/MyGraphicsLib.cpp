@@ -11,10 +11,6 @@ const char g_szClassName[] = "myWindowClass";
 #define BLACK_COLOR RGB(0, 0, 0) //黑色 
 #define BLUE_COLOR  RGB(0,0,255) //蓝色
 #define RED_COLOR   RGB(255,0,0) //红色
-#define α pi/4					 //阴影线45°
-#define K tan(α)                //阴影线斜率
-
-const int POINTNUM = 9;      //多边形点数.
 
 typedef struct XET
 {
@@ -27,7 +23,7 @@ struct point
 {
 	float x;
 	float y;
-}polypoint[POINTNUM] = {395, 887, 479, 998, 1199, 433, 1101, 867, 1294, 715, 1417, 171, 857, 163, 668, 314, 1111, 321};//{ 370,10,560,100,560,200,430,130,340,170,340,80 };//多边形顶点 
+};
 
 void DemoHZ(unsigned char *buf, int x, int y, COLORREF color,HDC hdc)
 {
@@ -171,7 +167,7 @@ void bubbleSort(double array[][2], int size)
 }
 
 //阴影填充  mn 8,4
-void shadowLine(HDC hdc, point P[], int mn, int m, double h, double a) {
+void shadowLine(HDC hdc, POINT P[], int mn, int m, double h, double a) {
 	const double k = 1.0;
 	const double deltaB = 8.0;
 	/*对于每条棱边，计算其两个端点按影阴线斜率K引线得到的截距，
@@ -277,12 +273,21 @@ void shadowLine(HDC hdc, point P[], int mn, int m, double h, double a) {
 //绘制任意多边形
 void drawPolygon(HDC hdc, point p[], int mn, int m) {
 	int i;
+
 	for (i = 0; (i + 1) <= (m - 1); ++i)
 		DDA(p[i].x, p[i].y, p[i + 1].x, p[i + 1].y, hdc);
 	DDA(p[0].x, p[0].y, p[m - 1].x, p[m - 1].y, hdc);
 	for (i = m; (i + 1) <= (mn - 1); ++i)
 		DDA(p[i].x, p[i].y, p[i + 1].x, p[i + 1].y, hdc);
 	//DDA(p[m].x, p[m].y, p[mn - 1].x, p[mn - 1].y, hdc);
+}
+
+void drawPolygon2(HDC hdc, POINT p[], int m) {
+	for (int i = 0; i < m-1; i++)
+	{
+		DDA(p[i].x, p[i].y, p[i + 1].x, p[i + 1].y, hdc);
+	}
+	DDA(p[0].x, p[0].y, p[m - 1].x, p[m - 1].y, hdc);
 }
 
 //漫水法填充
@@ -306,9 +311,9 @@ void FloodFill4(HDC hdc, int x, int y, COLORREF old_color, COLORREF new_color) {
 	}
 }
 
-void ScanFill(HDC hdc) {
-	int MaxY = 0;
-	int MinY = 2000;
+void ScanFill(HDC hdc,int POINTNUM,POINT polypoint[],COLORREF color) {
+	int MaxY = 500;
+	int MinY = 0;
 
 	int i;
 	for (i = 0; i < POINTNUM; i++)
@@ -317,12 +322,10 @@ void ScanFill(HDC hdc) {
 		{
 			MaxY = polypoint[i].y;
 		}
-
 		if (polypoint[i].y < MinY)
 		{
 			MinY = polypoint[i].y;
 		}
-
 	}
 
 	/*******初始化AET表，即初始化活跃边表***********************************************************/
@@ -439,7 +442,7 @@ void ScanFill(HDC hdc) {
 		{
 			for (float j = p->x; j <= p->next->x; j++)
 			{
-				SetPixel(hdc,static_cast<int>(j), i, RGB(255, 0, 0));
+				SetPixel(hdc,static_cast<int>(j), i, color);
 			}  // pDC.MoveTo( static_cast<int>(p->x), i ); 用画直线来替换上面的设置像素点颜色，速度更快  
 			   //  pDC.LineTo( static_cast<int>(p->next->x), i );  
 
@@ -459,41 +462,38 @@ void ScanFill(HDC hdc) {
 		phead = pnext;
 	}
 }
+
 void Paint(HWND hwnd)
 {
-	/*POINT p[8] = {(50,200),(200,200),(200,50),(50,50),
-				  (100,100),(100,150),(150,150),(150,100)};*/
-	//Point(566, 970), Point(685, 1020), Point(754, 683), Point(985, 768), Point(1037, 481), Point(1208, 546), Point(1233, 179), Point(1140, 440), Point(951, 386), Point(899, 662), Point(668, 562)
-	
-	//int p[8][2];//存放多边形端点，外环4个，内环4个
-	//p[0][0] = 50; p[0][1] = 200;
-	//p[1][0] = 200; p[1][1] = 200;
-	//p[2][0] = 200; p[2][1] = 50;
-	//p[3][0] = 50; p[3][1] = 50;
-	//p[4][0] = 100; p[4][1] = 100;
-	//p[5][0] = 100; p[5][1] = 150;
-	//p[6][0] = 150; p[6][1] = 150;
-	//p[7][0] = 150; p[7][1] = 100;
+	POINT trangle[3] = { 220,130,170,215,270,215 };
+	POINT rec1[4] = { 170,215,270,215,270,315,170,315};
+	POINT rec2[4] = {220,130,420,130,470,215,270,215};
+	POINT rec3[4] = {270,215,470,215,470,315,270,315};
 	PAINTSTRUCT ps;
 	HDC hdc;
 	HPEN hpen, _hpen;//阴影线填充画笔
 
 	hdc = BeginPaint(hwnd, &ps);
-	hpen = CreatePen(PS_SOLID, 1, BLACK_COLOR);
-	_hpen = CreatePen(PS_SOLID, 1, RED_COLOR);//阴影线填充画笔初始化
+	hpen = CreatePen(PS_SOLID,1024, BLACK_COLOR);
+	
 	SelectObject(hdc, hpen);
-
-	//drawPolygon(hdc, polypoint, 9, 9);
-	//ScanFill(hdc);	//修改
-	//shadowLine(hdc, polypoint, 9, 9, 10, 30);
-	//COLORREF this_color = RGB(255, 255, 255);//GetPixel(hdc, 180, 180);
-	//FloodFill4(hdc, 101, 200, this_color, RED_COLOR);
-	//DemoHZ(Bmp001, 100, 100, BLUE_COLOR, hdc);
-	DemoHZ(Bmp002, 150, 100, BLUE_COLOR, hdc);
-	//DemoHZ(Bmp003, 200, 100, BLUE_COLOR, hdc);
+	
+	drawPolygon2(hdc, trangle, 3);
+	drawPolygon2(hdc, rec1, 4);
+	drawPolygon2(hdc, rec2, 4);
+	drawPolygon2(hdc, rec3, 4);
+	
+	//shadowLine(hdc, rec2, 4, 4, 10, 30);
+	//ScanFill(hdc, 3, trangle, RED_COLOR);
+	//ScanFill(hdc, 4, rec1, RED_COLOR);
+	//ScanFill(hdc, 4, rec2, BLUE_COLOR);
+	DemoHZ(bmp1, 560, 420, BLACK_COLOR, hdc);
+	DemoHZ(bmp2, 575, 420, BLACK_COLOR, hdc);
+	DemoHZ(Bmp001, 600, 420, BLACK_COLOR, hdc);
+	DemoHZ(Bmp002, 625, 420, BLACK_COLOR, hdc);
+	DemoHZ(Bmp003, 650, 420, BLACK_COLOR, hdc);
+	
 	DeleteObject(hpen);
-	SelectObject(hdc, _hpen);// 选择阴影线填充画笔
-	DeleteObject(_hpen);
 	EndPaint(hwnd, &ps);
 }
 
@@ -566,9 +566,9 @@ HWND CreateMyWindow(HINSTANCE hInstance, int nCmdShow)
 	hwnd = CreateWindowEx(
 		WS_EX_CLIENTEDGE,
 		(LPCWSTR)g_szClassName,
-		TEXT("我的窗口名称"),
+		TEXT("2D Paint"),
 		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT, 2000, 2000, // 出现坐标 x,y 默认分配 窗口宽 400 高 300
+		CW_USEDEFAULT, CW_USEDEFAULT, 700, 500, // 出现坐标 x,y 默认分配 窗口宽 400 高 300
 		NULL, NULL, hInstance, NULL);
 
 	if (hwnd == NULL)
