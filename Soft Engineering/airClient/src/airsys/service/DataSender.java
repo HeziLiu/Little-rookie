@@ -48,9 +48,10 @@ public class DataSender {
         //pw.println(msg);
     }
 
-    public void sendStatus(InetAddress addr,int port,float temp)throws IOException{
+    public void sendStatus(InetAddress addr,int port,String id,float temp)throws IOException{
         System.out.println("send status: "+addr+" port: "+port+" temperature: "+temp);
-        msg="{\"type\":1,\"temperature\":"+temp+"}";
+        msg="{\"type\":1,\"room\":\""+id+"\",\"temperature\":"+temp+"}";
+        //todo 报文格式改变 id+引号
         pw.println(msg);
     }
 

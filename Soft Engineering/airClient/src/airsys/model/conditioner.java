@@ -12,8 +12,10 @@ public class conditioner {
 
     public static final int pending=0;//无风状态
     public static final int low=1;  //小风
-    public static final int mid=2;  //微风
+    public static final int mid=2;   //微风
     public static final int high=3; //中风
+
+    public static double temp_tick;
 
     public static final int COLD_MODE=0;
     public static final int HOT_MODE=1;
@@ -31,7 +33,8 @@ public class conditioner {
     private int wind;               //风速
     private float currentPay;     //金额
     private int workMode;
-
+    private Timer tempChangeWork;//工作时
+    private Timer tempChangePend;//回温时
     private DataChangedListener listener;
 
     public conditioner(String room,String ipAddr) {
@@ -41,6 +44,47 @@ public class conditioner {
         this.currentTemp= CURRENT_TEMP;
         this.workMode=COLD_MODE;
         this.currentPay=0;
+        this.tempChangeWork= new Timer(1000, e -> {
+            if (workMode == HOT_MODE && currentTemp <= 30.0f) {
+                switch (wind) {
+                    case 1:
+                        currentTemp += 0.05;
+                        break;
+                    case 2:
+                        currentTemp += 0.1;
+                        break;
+                    case 3:
+                        currentTemp += 0.2;
+                        break;
+                    default:
+                        break;
+                }
+            } else if (workMode == COLD_MODE && currentTemp >= 16.0f) {
+                switch (wind) {
+                    case 1:
+                        currentTemp -= 0.05;
+                        temp_tick=0.05;
+                        break;
+                    case 2:
+                        currentTemp -= 0.1;
+                        temp_tick=0.1;
+                        break;
+                    case 3:
+                        currentTemp -= 0.2;
+                        temp_tick=0.2;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        this.tempChangePend= new Timer(1000,e->{
+            if (workMode==HOT_MODE&&currentTemp>CURRENT_TEMP){
+                currentTemp-=TEMP_GRID;
+            }else if (workMode==COLD_MODE&&currentTemp<CURRENT_TEMP){
+                currentTemp+=TEMP_GRID;
+            }
+        });
     }
 
     public void addDataChangedListener(DataChangedListener listener){
@@ -121,46 +165,18 @@ public class conditioner {
 
     }
     //每一秒变化温度，小风0.05 中风0.1 大风0.2
-    public void addTempChangeDaemon(){
-       new Timer(1000, new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               if (workMode==HOT_MODE&&currentTemp<=30.0f){
-                   switch (wind){
-                       case 1:currentTemp+=0.05;
-                       break;
-                       case 2:currentTemp+=0.1;
-                       break;
-                       case 3:currentTemp+=0.2;
-                       break;
-                       default:break;
-                   }
-               }else if(workMode==COLD_MODE&&currentTemp>=16.0f){
-                   switch (wind){
-                       case 1:currentTemp-=0.05;
-                           break;
-                       case 2:currentTemp-=0.1;
-                           break;
-                       case 3:currentTemp-=0.2;
-                           break;
-                       default:break;
-                   }
-               }
-               listener.temperatureChanged(currentTemp);
-           }
-       }).start();
-    }
-
-    public void addReturnEnv(){
-        //向室温26℃靠近
-        new Timer(1000,e->{
-            if (workMode==HOT_MODE&&currentTemp>CURRENT_TEMP){
-                currentTemp-=TEMP_GRID;
-            }else if (workMode==COLD_MODE&&currentTemp<CURRENT_TEMP){
-                currentTemp+=TEMP_GRID;
-            }
-            listener.temperatureChanged(currentTemp);
-        }).start();
+    public void addTempChangeDaemon(boolean start){//false:停止服务 启动回温
+        if (start) {                               //true:正在服务 开始降温
+            tempChangeWork.start();
+            tempChangePend.stop();
+        }
+        else{
+            tempChangeWork.stop();
+            tempChangePend.start();
+        }
+        if (Math.abs(targetTemp-currentTemp)<temp_tick)
+            currentTemp=targetTemp;
+        listener.temperatureChanged(currentTemp);
     }
 
     public String getRoom() {

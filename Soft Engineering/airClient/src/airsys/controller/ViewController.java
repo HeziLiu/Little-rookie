@@ -37,23 +37,24 @@ public class ViewController {
         int tick = Configure.DEFAULT_TICK;
         dataTimer = new Timer(tick, e -> {
             try {//每隔1秒传送房间状态
-                sender.sendStatus(remoteAddr, port, model.getCurrentTemp());
+                sender.sendStatus(remoteAddr, port,model.getRoom(), model.getCurrentTemp());
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         });
         serv=new Thread(new TcpServer(sender.getServerSocket(),new ServerListener() {
-            @Override// switch  temperature(target) wind cost
+            @Override
             public void onReceive(String msg) {
-                //需要处理服务器的通告报文
-                //格式如下：
                 //{"switch":1/0,"temperature":25.80,"wind":1,"cost":2.00}
                 JSONObject jsonObject=new JSONObject(msg);
                 int _switch=jsonObject.getInt("switch");
                 if (_switch==0){
                     model.set_switch(0);//关机
-                    serv.interrupt();
+                    view.bootButton.setText("开机");
+                    serv.suspend();//挂起
                     dataTimer.stop();
+                    view.disableBtn();
+                    isOn=false;
                 }else{
                     float targetTemp=jsonObject.getFloat("temperature");
                     int wind=jsonObject.getInt("wind");
@@ -61,9 +62,9 @@ public class ViewController {
                     model.setCurrentPay(cost);
                     if (wind> conditioner.pending){
                         model.set_switch(1);
-                        model.addTempChangeDaemon();
+                        model.addTempChangeDaemon(true);
                     }else{//wind=0 开始回温
-                        model.addReturnEnv();
+                        model.addTempChangeDaemon(false);//设置回温
                     }
                     model.setTargetTemp(targetTemp);
                     model.setWind(wind);
@@ -87,14 +88,12 @@ public class ViewController {
                     try {
                         sender.connect(remoteAddr,port,model.getRoom());
                         sender.request(remoteAddr,port,model.getRoom(),1,model.getTargetTemp(),model.mid);
-
                         dataTimer.start();
                         view.initStatus();
                         view.setCurrTemp((int) model.getCurrentTemp());
                         view.setTargetTemp((int) model.getTargetTemp());
                         view.setPayment(0.0f);
                         view.bootButton.setText("关机");
-                        model.addTempChangeDaemon();
                         if (isFirst){
                             serv.start();
                             isFirst=false;
