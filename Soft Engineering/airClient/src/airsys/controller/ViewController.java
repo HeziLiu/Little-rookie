@@ -27,7 +27,7 @@ public class ViewController {
 
     public ViewController(OverViewPanel view, conditioner model1) throws IOException {
         this.view=view;
-        this.model=model1;//model与model对象不一致！bug
+        this.model=model1;
         try {
             sender=new DataSender();
         } catch (IOException e) {
@@ -63,8 +63,10 @@ public class ViewController {
                     if (wind> conditioner.pending){
                         model.set_switch(1);
                         model.addTempChangeDaemon(true);
-                    }else{//wind=0 开始回温
+                    }else{//wind=0 开始回温，停止发送状态启动回温后再开启
+                        dataTimer.stop();
                         model.addTempChangeDaemon(false);//设置回温
+                        dataTimer.start();
                     }
                     model.setTargetTemp(targetTemp);
                     model.setWind(wind);

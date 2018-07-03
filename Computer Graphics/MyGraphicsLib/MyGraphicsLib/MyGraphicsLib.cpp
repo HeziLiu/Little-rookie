@@ -310,7 +310,7 @@ void FloodFill4(HDC hdc, int x, int y, COLORREF old_color, COLORREF new_color) {
 		cout << "exception catched!" << endl;
 	}
 }
-
+//É¨ÃèÏßÌî³ä
 void ScanFill(HDC hdc,int POINTNUM,POINT polypoint[],COLORREF color) {
 	int MaxY = 500;
 	int MinY = 0;

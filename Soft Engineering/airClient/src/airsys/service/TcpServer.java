@@ -27,7 +27,6 @@ public class TcpServer implements Runnable {
                     String msg = "";
                     int is;
                     while ((is = br.read()) != -1) {
-                        //System.out.println("hahaha");
                         msg += (char) is;
                         if ((char) is == '}')
                             break;
