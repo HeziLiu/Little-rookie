@@ -6,7 +6,7 @@ public interface Configure {
 
     String ROOM_ID="307B";
 
-    String REMOTE_IP="172.20.10.10";
+    String REMOTE_IP="localhost";
 
 
     int DEFAULT_TICK=1000;//1 sec

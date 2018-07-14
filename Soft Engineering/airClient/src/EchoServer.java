@@ -11,7 +11,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 
 public class EchoServer {
-    private static final int PORT=9996;
+    private static final int PORT=9997;
     public static void main(String[] args) throws Exception {
 
         Selector selector = null;
