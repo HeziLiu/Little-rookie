@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Little-rookie.iml" filepath="$PROJECT_DIR$/../../Little-rookie.iml" />
       <module fileurl="file://$PROJECT_DIR$/airClient.iml" filepath="$PROJECT_DIR$/airClient.iml" />
     </modules>
   </component>
