@@ -47,7 +47,7 @@ Activity的``onSaveInstanceState()``和``onRestoreInstanceState()``并不是生�
 
 + px:(pixels)像素  
 
-  $pixel=(ppi/160)*dip$
+  $ pixel=(ppi/160)*dip$
 
   
 
